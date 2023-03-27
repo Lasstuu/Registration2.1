@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:visibility="visible"
+    tools:context=".AddUserActivity"
+    tools:visibility="visible">
+
+    <RadioGroup
+        android:id="@+id/rgUserType"
+        android:layout_width="204dp"
+        android:layout_height="194dp"
+        android:layout_marginTop="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/email">
+
+        <RadioButton
+            android:id="@+id/rbTite"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Tietotekniikka" />
+
+        <RadioButton
+            android:id="@+id/rbTuta"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Tuotantotalous" />
+
+        <RadioButton
+            android:id="@+id/rbLate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Laskennallinen tekniikka" />
+
+        <RadioButton
+            android:id="@+id/rbSate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Sähkötekniikka" />
+    </RadioGroup>
+
+    <Button
+        android:id="@+id/bAddUser"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="addUser"
+        android:text="Lisää käyttäjä"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/rgUserType" />
+
+    <EditText
+        android:id="@+id/txtfirstName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="Etunimi"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.502"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/txtLastName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:ems="10"
+        android:hint="Sukunimi"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtfirstName" />
+
+    <EditText
+        android:id="@+id/email"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:ems="10"
+        android:hint="Sähköpostiosoite"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtLastName" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Valitse kuva"
+        android:textColor="#000000"
+        app:layout_constraintBottom_toTopOf="@+id/bAddUser"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/rgUserType"
+        app:layout_constraintVertical_bias="0.109" />
+
+    <RadioGroup
+        android:id="@+id/radioGroup"
+        android:layout_width="250dp"
+        android:layout_height="107dp"
+        app:layout_constraintBottom_toTopOf="@+id/bAddUser"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView2"
+        app:layout_constraintVertical_bias="0.0">
+
+        <RadioButton
+            android:id="@+id/pfp1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Kuva 1" />
+
+        <RadioButton
+            android:id="@+id/pfp2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Kuva2" />
+
+    </RadioGroup>
+
+    <ImageView
+        android:id="@+id/imageView5"
+        android:layout_width="59dp"
+        android:layout_height="59dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/radioGroup"
+        app:layout_constraintTop_toTopOf="@+id/radioGroup"
+        app:srcCompat="@drawable/pfp1" />
+
+    <ImageView
+        android:id="@+id/imageView6"
+        android:layout_width="76dp"
+        android:layout_height="73dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/radioGroup"
+        app:layout_constraintTop_toBottomOf="@+id/imageView5"
+        app:srcCompat="@drawable/pfp2" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
