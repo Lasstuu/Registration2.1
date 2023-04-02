@@ -22,6 +22,6 @@ public class ListUsersActivity extends AppCompatActivity {
         recyclerView = findViewById(R.id.rvUserView);
 
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
-        recyclerView.setAdapter(new UserListAdapter(getApplicationContext(), userStorage.getUsers()));
+        recyclerView.setAdapter(new UserListAdapter(getApplicationContext(), userStorage.getUsersAlphabetical()));
     }
 }

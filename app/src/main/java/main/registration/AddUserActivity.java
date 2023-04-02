@@ -4,8 +4,11 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.view.View;
+import android.widget.CheckBox;
 import android.widget.RadioGroup;
 import android.widget.TextView;
+
+import java.util.ArrayList;
 
 public class AddUserActivity extends AppCompatActivity {
 
@@ -24,31 +27,32 @@ public class AddUserActivity extends AppCompatActivity {
         String firstName = tvFirstName.getText().toString();
         String lastName = tvLastName.getText().toString();
         String email = tvEmail.getText().toString();
-        int image = 0;
-        RadioGroup radioGroup = findViewById(R.id.radioGroup);
-        switch (radioGroup.getCheckedRadioButtonId()) {
-            case R.id.pfp1:
-                image = R.drawable.pfp1;
-                break;
-            case R.id.pfp2:
-                image = R.drawable.pfp2;
-                break;
-        }
+        ArrayList<String> diplomas = new ArrayList<>();
+        CheckBox cbKandi = findViewById(R.id.cbKandi);
+        CheckBox cbDI = findViewById(R.id.cbDI);
+        CheckBox cbTohtori = findViewById(R.id.cbTohtori);
+        CheckBox cbMaisteri = findViewById(R.id.cbMaisteri);
+        if(cbKandi.isChecked() == true){diplomas.add("Kandidaatin tutkinto");}
+        if(cbDI.isChecked() == true){diplomas.add("Diplomi-insinöörin tutkinto");}
+        if(cbTohtori.isChecked() == true){diplomas.add("Tekniikan tohtorin tutkinto");}
+        if(cbMaisteri.isChecked() == true){diplomas.add("Uimamaisteri");}
+
         switch (rgUserType.getCheckedRadioButtonId()) {
 
             case R.id.rbTite:
-                UserStorage.getInstance().addUser(new User(firstName, lastName, email,"Tietotekniikka", image));
+                UserStorage.getInstance().addUser(new User(firstName, lastName, email,"Tietotekniikka", diplomas));
                 break;
             case R.id.rbTuta:
-                UserStorage.getInstance().addUser(new User(firstName, lastName, email,"Tuotantotalous", image));
+                UserStorage.getInstance().addUser(new User(firstName, lastName, email,"Tuotantotalous", diplomas));
                 break;
             case R.id.rbLate:
-                UserStorage.getInstance().addUser(new User(firstName, lastName, email,"Laskennallinen tekniikka", image));
+                UserStorage.getInstance().addUser(new User(firstName, lastName, email,"Laskennallinen tekniikka", diplomas));
                 break;
             case R.id.rbSate:
-                UserStorage.getInstance().addUser(new User(firstName, lastName, email,"Sähkötekniikka", image));
+                UserStorage.getInstance().addUser(new User(firstName, lastName, email,"Sähkötekniikka", diplomas));
                 break;
         }
+
 
     }
 
