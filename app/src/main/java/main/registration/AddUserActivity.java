@@ -2,6 +2,7 @@ package main.registration;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.CheckBox;
@@ -11,7 +12,7 @@ import android.widget.TextView;
 import java.util.ArrayList;
 
 public class AddUserActivity extends AppCompatActivity {
-
+    private Context context;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -52,7 +53,6 @@ public class AddUserActivity extends AppCompatActivity {
                 UserStorage.getInstance().addUser(new User(firstName, lastName, email,"Sähkötekniikka", diplomas));
                 break;
         }
-
 
     }
 
