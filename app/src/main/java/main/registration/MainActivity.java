@@ -16,7 +16,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         context = MainActivity.this;
         UserStorage.getInstance().loadUsers(context);
-    }
+    }   
 
     public void switchToAddUser(View view){
         Intent intent = new Intent(this, AddUserActivity.class);
